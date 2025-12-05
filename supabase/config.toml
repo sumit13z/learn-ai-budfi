@@ -5,3 +5,9 @@ verify_jwt = false
 
 [functions.verify-razorpay-payment]
 verify_jwt = false
+
+[functions.create-sourcecode-order]
+verify_jwt = false
+
+[functions.verify-sourcecode-payment]
+verify_jwt = false

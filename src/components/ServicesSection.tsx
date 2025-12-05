@@ -1,11 +1,12 @@
-import { BookOpen, Globe, ExternalLink, Check } from "lucide-react";
+import { BookOpen, Globe, ExternalLink, Check, Code, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface ServicesSectionProps {
   onBuyClick: () => void;
+  onSourceCodeBuyClick: () => void;
 }
 
-const ServicesSection = ({ onBuyClick }: ServicesSectionProps) => {
+const ServicesSection = ({ onBuyClick, onSourceCodeBuyClick }: ServicesSectionProps) => {
   const webApps = [
     { name: "BudFi", url: "https://www.budfi.in", description: "Financial Planning Platform" },
     { name: "Periodicity", url: "https://www.periodicity.in", description: "Period Tracking App" },
@@ -35,7 +36,7 @@ const ServicesSection = ({ onBuyClick }: ServicesSectionProps) => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {/* AI Masterclass Card */}
           <div className="relative group">
             <div className="absolute inset-0 bg-gradient-gold rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity" />
@@ -75,6 +76,81 @@ const ServicesSection = ({ onBuyClick }: ServicesSectionProps) => {
                   onClick={onBuyClick}
                   className="bg-gradient-gold text-navy-dark font-bold text-lg px-8 py-6 hover:scale-105 transition-all shadow-xl"
                 >
+                  Buy Now
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Source Code Bundle Card */}
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-to-br from-teal to-gold rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity" />
+            <div className="relative bg-navy/80 backdrop-blur-md border border-teal/30 rounded-2xl p-8 h-full">
+              <div className="absolute top-4 right-4">
+                <span className="px-3 py-1 text-xs font-bold bg-gradient-gold text-navy-dark rounded-full animate-pulse">
+                  HOT 🔥
+                </span>
+              </div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-teal to-gold flex items-center justify-center">
+                  <Code className="w-8 h-8 text-accent-foreground" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-serif font-bold text-primary-foreground">
+                    Source Code Bundle
+                  </h3>
+                  <p className="text-primary-foreground/60">Premium Web Apps</p>
+                </div>
+              </div>
+
+              <p className="text-primary-foreground/70 mb-4">
+                Get the complete source code for two production-ready web applications:
+              </p>
+
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-navy-dark/50 border border-teal/20">
+                  <div className="w-10 h-10 rounded-lg bg-teal/20 flex items-center justify-center">
+                    <span className="text-lg">🎵</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary-foreground">BEAT</h4>
+                    <p className="text-xs text-primary-foreground/60">Music streaming app</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-navy-dark/50 border border-teal/20">
+                  <div className="w-10 h-10 rounded-lg bg-gold/20 flex items-center justify-center">
+                    <span className="text-lg">📓</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary-foreground">Daily Journal</h4>
+                    <p className="text-xs text-primary-foreground/60">Personal journaling app</p>
+                  </div>
+                </div>
+              </div>
+
+              <ul className="space-y-2 mb-6 text-sm">
+                {["Full source code access", "Setup documentation", "Lifetime access"].map((feature) => (
+                  <li key={feature} className="flex items-center gap-2 text-primary-foreground/70">
+                    <Check className="w-4 h-4 text-teal" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex items-end justify-between">
+                <div>
+                  <div className="flex items-center gap-2 text-xs text-primary-foreground/50 mb-1">
+                    <span>🇮🇳 ₹2,999</span>
+                    <span className="text-primary-foreground/30">|</span>
+                    <span>🌍 $29</span>
+                  </div>
+                  <span className="text-primary-foreground/40 line-through text-sm">₹9,999 / $99</span>
+                </div>
+                <Button
+                  onClick={onSourceCodeBuyClick}
+                  className="bg-gradient-to-r from-teal to-teal text-accent-foreground font-bold px-6 py-5 hover:scale-105 transition-all shadow-xl flex items-center gap-2"
+                >
+                  <Download className="w-4 h-4" />
                   Buy Now
                 </Button>
               </div>

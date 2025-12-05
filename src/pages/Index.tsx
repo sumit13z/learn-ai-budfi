@@ -7,9 +7,11 @@ import ServicesSection from "@/components/ServicesSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import PurchaseModal from "@/components/PurchaseModal";
+import SourceCodePurchaseModal from "@/components/SourceCodePurchaseModal";
 
 const Index = () => {
   const [isPurchaseModalOpen, setIsPurchaseModalOpen] = useState(false);
+  const [isSourceCodeModalOpen, setIsSourceCodeModalOpen] = useState(false);
 
   return (
     <>
@@ -38,12 +40,19 @@ const Index = () => {
         <Navbar />
         <HeroSection />
         <AboutSection />
-        <ServicesSection onBuyClick={() => setIsPurchaseModalOpen(true)} />
+        <ServicesSection 
+          onBuyClick={() => setIsPurchaseModalOpen(true)} 
+          onSourceCodeBuyClick={() => setIsSourceCodeModalOpen(true)}
+        />
         <ContactSection />
         <Footer />
         <PurchaseModal
           isOpen={isPurchaseModalOpen}
           onClose={() => setIsPurchaseModalOpen(false)}
+        />
+        <SourceCodePurchaseModal
+          isOpen={isSourceCodeModalOpen}
+          onClose={() => setIsSourceCodeModalOpen(false)}
         />
       </main>
     </>

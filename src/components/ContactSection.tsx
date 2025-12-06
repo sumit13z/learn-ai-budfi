@@ -82,6 +82,7 @@ const ContactSection = () => {
                   { name: "BudFi", url: "https://www.budfi.in" },
                   { name: "Periodicity", url: "https://www.periodicity.in" },
                   { name: "Journal", url: "https://journal.budfi.in" },
+                  { name: "BEAT", url: "https://www.beat.personacraft.in" },
                 ].map((app) => (
                   <a
                     key={app.name}

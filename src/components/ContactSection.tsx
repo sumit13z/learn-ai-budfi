@@ -30,9 +30,9 @@ const ContactSection = () => {
   };
 
   const contactInfo = [
-    { icon: Mail, title: "Email Us", value: "contact@budfi.in", color: "gold" },
-    { icon: Phone, title: "Call Us", value: "+91 98765 43210", color: "teal" },
-    { icon: MapPin, title: "Location", value: "India", color: "primary" },
+    { icon: Mail, title: "Email Us", value: "info@budfi.in", color: "gold" },
+    { icon: Phone, title: "Call Us", value: "+91- 9439044619", color: "teal" },
+    { icon: MapPin, title: "Location", value: "India, Odisha", color: "primary" },
   ];
 
   return (

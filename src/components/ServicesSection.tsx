@@ -11,6 +11,7 @@ const ServicesSection = ({ onBuyClick, onSourceCodeBuyClick }: ServicesSectionPr
     { name: "BudFi", url: "https://www.budfi.in", description: "Financial Planning Platform" },
     { name: "Periodicity", url: "https://www.periodicity.in", description: "Period Tracking App" },
     { name: "Journal", url: "https://journal.budfi.in", description: "Personal Journaling App" },
+    { name: "BEAT", url: "https://www.beat.personacraft.in", description: "Healing Body & Mind with Frequencies" },
   ];
 
   const masterclassFeatures = [

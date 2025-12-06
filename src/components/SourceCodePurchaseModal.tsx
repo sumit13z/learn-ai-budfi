@@ -95,7 +95,7 @@ const SourceCodePurchaseModal = ({ isOpen, onClose }: SourceCodePurchaseModalPro
     setIsSubmitting(true);
 
     try {
-      const amount = isIndian ? 2999 : 29;
+      const amount = isIndian ? 2999 : 3499;
       const currency = isIndian ? 'INR' : 'USD';
 
       // Save purchase to database
@@ -213,7 +213,7 @@ const SourceCodePurchaseModal = ({ isOpen, onClose }: SourceCodePurchaseModalPro
 
   if (!isOpen) return null;
 
-  const price = isIndian ? "₹2,999" : "$29";
+  const price = isIndian ? "₹2,999" : "$34.99";
   const originalPrice = isIndian ? "₹9,999" : "$99";
 
   return (

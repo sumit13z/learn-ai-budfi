@@ -24,8 +24,8 @@ serve(async (req) => {
       throw new Error('Razorpay credentials not configured');
     }
 
-    // Determine amount based on currency (INR: 2999, USD: 29)
-    const amount = currency === 'INR' ? 299900 : 2900; // Amount in smallest currency unit
+    // Determine amount based on currency (INR: 2999, USD: 34.99)
+    const amount = currency === 'INR' ? 299900 : 3499; // Amount in smallest currency unit
     const orderCurrency = currency === 'INR' ? 'INR' : 'USD';
 
     // Create Razorpay order

@@ -143,7 +143,7 @@ const ServicesSection = ({ onBuyClick, onSourceCodeBuyClick }: ServicesSectionPr
                   <div className="flex items-center gap-2 text-xs text-primary-foreground/50 mb-1">
                     <span>🇮🇳 ₹2,999</span>
                     <span className="text-primary-foreground/30">|</span>
-                    <span>🌍 $29</span>
+                    <span>🌍 $34.99</span>
                   </div>
                   <span className="text-primary-foreground/40 line-through text-sm">₹9,999 / $99</span>
                 </div>

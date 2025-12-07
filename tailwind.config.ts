@@ -105,5 +105,6 @@ export default {
         "shimmer-gold": "shimmer 3s linear infinite",
       },
     },
+  },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

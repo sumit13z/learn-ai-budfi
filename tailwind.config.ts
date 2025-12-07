@@ -16,6 +16,8 @@ export default {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
         serif: ['Playfair Display', 'serif'],
+        playfair: ['Playfair Display', 'serif'],
+        inter: ['Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -64,6 +66,12 @@ export default {
           DEFAULT: "hsl(var(--teal))",
           light: "hsl(var(--teal-light))",
         },
+        luxury: {
+          black: "#050505",
+          cream: "#FAFAF9",
+          gold: "#D97706",
+          card: "rgba(20, 20, 20, 0.8)",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -93,8 +101,9 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "shimmer-gold": "shimmer 3s linear infinite",
       },
     },
-  },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

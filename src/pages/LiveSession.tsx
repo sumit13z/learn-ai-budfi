@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Brain, Sparkles, Layers, Rocket, Calendar, Clock, Video, ArrowRight, Star, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -56,6 +57,7 @@ const features = [
 ];
 
 const LiveSession = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<{ name?: string; email?: string; phone?: string }>({});
@@ -156,8 +158,7 @@ const LiveSession = () => {
             if (verifyError) throw verifyError;
 
             if (verifyData.success) {
-              toast.success("Payment successful! Check your email for the session link.");
-              setFormData({ name: "", email: "", phone: "" });
+              navigate("/live-session/thank-you");
             }
           } catch (error) {
             console.error("Payment verification error:", error);

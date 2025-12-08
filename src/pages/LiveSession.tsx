@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Brain, Sparkles, Layers, Rocket, Calendar, Clock, Video, ArrowRight, Star, CheckCircle, ArrowLeft } from "lucide-react";
+import { Brain, Sparkles, Rocket, Calendar, Clock, Video, ArrowRight, Star, CheckCircle, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import buildWithoutCodingImg from "@/assets/build-without-coding.png";
 
 interface RazorpayOptions {
   key: string;
@@ -33,7 +34,14 @@ interface RazorpayResponse {
   razorpay_signature: string;
 }
 
-const features = [
+interface Feature {
+  icon?: typeof Brain;
+  image?: string;
+  title: string;
+  description: string;
+}
+
+const features: Feature[] = [
   {
     icon: Brain,
     title: "LLM Logic",
@@ -45,9 +53,9 @@ const features = [
     description: "Learn advanced prompting techniques used by industry professionals.",
   },
   {
-    icon: Layers,
-    title: "The Stack",
-    description: "Discover the no-code tools that power million-dollar AI products.",
+    image: buildWithoutCodingImg,
+    title: "Build Without Coding",
+    description: "Discover the no-code AI tools that power million-dollar products.",
   },
   {
     icon: Rocket,
@@ -112,7 +120,7 @@ const LiveSession = () => {
           email: formData.email,
           phone: formData.phone,
           product_name: "AI Live Masterclass",
-          amount: 1,
+          amount: 149,
           payment_status: "pending",
         })
         .select()
@@ -139,7 +147,7 @@ const LiveSession = () => {
         amount: orderData.amount,
         currency: orderData.currency,
         name: "BudFi AI Masterclass",
-        description: "AI Live Masterclass - Dec 21",
+        description: "AI Live Masterclass - Dec 28",
         order_id: orderData.orderId,
         handler: async (response: RazorpayResponse) => {
           try {
@@ -294,9 +302,19 @@ const LiveSession = () => {
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-luxury-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   <div className="relative z-10">
-                    <div className="w-14 h-14 mb-6 rounded-xl bg-luxury-gold/10 flex items-center justify-center group-hover:bg-luxury-gold/20 transition-colors duration-300">
-                      <feature.icon className="w-7 h-7 text-luxury-gold" />
-                    </div>
+                    {feature.image ? (
+                      <div className="w-14 h-14 mb-6 rounded-xl overflow-hidden">
+                        <img 
+                          src={feature.image} 
+                          alt={feature.title} 
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ) : feature.icon ? (
+                      <div className="w-14 h-14 mb-6 rounded-xl bg-luxury-gold/10 flex items-center justify-center group-hover:bg-luxury-gold/20 transition-colors duration-300">
+                        <feature.icon className="w-7 h-7 text-luxury-gold" />
+                      </div>
+                    ) : null}
                     <h3 className="font-playfair text-xl font-semibold mb-3 text-luxury-cream group-hover:text-luxury-gold transition-colors duration-300">
                       {feature.title}
                     </h3>
@@ -320,7 +338,7 @@ const LiveSession = () => {
                 </div>
                 <div>
                   <p className="text-sm text-luxury-cream/50 uppercase tracking-wider">Date</p>
-                  <p className="font-playfair text-2xl font-semibold text-luxury-cream">Dec 21</p>
+                  <p className="font-playfair text-2xl font-semibold text-luxury-cream">Dec 28</p>
                 </div>
               </div>
 
@@ -361,11 +379,13 @@ const LiveSession = () => {
 
             <div className="relative p-8 md:p-10 rounded-3xl bg-luxury-card/50 backdrop-blur-xl border border-luxury-gold/20 shadow-[0_0_80px_rgba(217,119,6,0.1)]">
               <div className="text-center mb-8">
-                <div className="inline-flex items-baseline gap-2">
+                <div className="inline-flex items-baseline gap-3">
                   <span className="text-sm text-luxury-cream/50 line-through">₹499</span>
-                  <span className="font-playfair text-5xl font-bold text-luxury-gold">₹1</span>
+                  <span className="font-playfair text-5xl font-bold text-luxury-gold">₹149</span>
+                  <span className="text-luxury-cream/40">|</span>
+                  <span className="font-playfair text-3xl font-bold text-luxury-gold">$2.49</span>
                 </div>
-                <p className="text-sm text-luxury-cream/50 mt-2">Testing mode • Will be ₹149 in production</p>
+                <p className="text-sm text-luxury-cream/50 mt-2">Early bird pricing • Limited time only</p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Brain, Sparkles, Layers, Rocket, Calendar, Clock, Video, ArrowRight, Star, CheckCircle } from "lucide-react";
+import { Brain, Sparkles, Layers, Rocket, Calendar, Clock, Video, ArrowRight, Star, CheckCircle, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -112,7 +112,7 @@ const LiveSession = () => {
           email: formData.email,
           phone: formData.phone,
           product_name: "AI Live Masterclass",
-          amount: 149,
+          amount: 1,
           payment_status: "pending",
         })
         .select()
@@ -208,6 +208,15 @@ const LiveSession = () => {
           <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-luxury-gold/5 rounded-full blur-[120px] animate-pulse-slow" style={{ animationDelay: "1s" }} />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-luxury-gold/[0.02] rounded-full blur-[200px]" />
         </div>
+
+        {/* Back Button */}
+        <button
+          onClick={() => navigate("/")}
+          className="fixed top-6 right-6 z-50 flex items-center gap-2 px-4 py-2 rounded-full bg-luxury-card/50 backdrop-blur-xl border border-luxury-gold/20 text-luxury-cream/70 hover:text-luxury-gold hover:border-luxury-gold/40 transition-all duration-300"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          <span className="text-sm font-medium">Back</span>
+        </button>
 
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
@@ -354,9 +363,9 @@ const LiveSession = () => {
               <div className="text-center mb-8">
                 <div className="inline-flex items-baseline gap-2">
                   <span className="text-sm text-luxury-cream/50 line-through">₹499</span>
-                  <span className="font-playfair text-5xl font-bold text-luxury-gold">₹149</span>
+                  <span className="font-playfair text-5xl font-bold text-luxury-gold">₹1</span>
                 </div>
-                <p className="text-sm text-luxury-cream/50 mt-2">Early bird pricing • Limited time only</p>
+                <p className="text-sm text-luxury-cream/50 mt-2">Testing mode • Will be ₹149 in production</p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">

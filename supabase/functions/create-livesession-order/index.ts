@@ -23,9 +23,9 @@ serve(async (req) => {
       throw new Error('Payment gateway not configured');
     }
 
-    // Amount is ₹149 = 14900 paise
+    // Amount is ₹1 = 100 paise (for testing)
     const orderData = {
-      amount: 14900,
+      amount: 100,
       currency: 'INR',
       receipt: purchaseId,
       notes: { name, email, phone, purchaseId, product: 'AI Live Masterclass' }

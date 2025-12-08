@@ -10,7 +10,7 @@ const ThankYouLiveSession = () => {
     <>
       <Helmet>
         <title>Registration Confirmed | AI Live Masterclass</title>
-        <meta name="description" content="Your registration for the AI Live Masterclass is confirmed. See you on Dec 21!" />
+        <meta name="description" content="Your registration for the AI Live Masterclass is confirmed. See you on Dec 28!" />
       </Helmet>
 
       <div className="min-h-screen bg-luxury-black text-luxury-cream font-inter">
@@ -42,7 +42,7 @@ const ThankYouLiveSession = () => {
 
             {/* Subheadline */}
             <p className="text-lg md:text-xl text-luxury-cream/70 max-w-xl mx-auto mb-10 leading-relaxed animate-fade-in-up font-light" style={{ animationDelay: "0.3s" }}>
-              Thank you for registering for the AI Live Masterclass. The Zoom link will be sent to your email before the session.
+              Thank you for registering for the AI Live Masterclass on Dec 28. The Zoom link will be sent to your email before the session.
             </p>
 
             {/* Session Details Card */}
@@ -56,7 +56,7 @@ const ThankYouLiveSession = () => {
                   </div>
                   <div className="text-left">
                     <p className="text-xs text-luxury-cream/50 uppercase tracking-wider">Date</p>
-                    <p className="font-playfair text-lg font-semibold text-luxury-cream">Dec 21</p>
+                    <p className="font-playfair text-lg font-semibold text-luxury-cream">Dec 28</p>
                   </div>
                 </div>
 
